@@ -19,16 +19,18 @@ import Toast from 'react-native-toast-message';
 import Colors from '../../utils/Colors';
 import { UserContext } from '../../context/UserContext';
 // import { GoogleSignin,statusCodes } from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+// import auth from '@react-native-firebase/auth';
+// import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import * as Google from 'expo-auth-session/providers/google';
+
 
 const { height: screenHeight } = Dimensions.get('window');
 
-const GoogleLogin = async () => {
-  await GoogleSignin.hasPlayServices();
-  const userInfo = await GoogleSignin.signIn();
-  return userInfo;
-};
+// const GoogleLogin = async () => {
+//   await GoogleSignin.hasPlayServices();
+//   const userInfo = await GoogleSignin.signIn();
+//   return userInfo;
+// };
 
 const AuthScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
@@ -40,13 +42,24 @@ const AuthScreen = ({ navigation }) => {
   const { loginUser } = useContext(UserContext);
   const [error, setError] = useState('');
 
+  // useEffect(() => {
+  //   GoogleSignin.configure({
+  //     webClientId: '860231324596-4ps00mvkffvbmujg5529tk3vh8ui0sch.apps.googleusercontent.com',
+  //     offlineAccess: true,
+  //     scopes: ['profile', 'email'],
+  //   });
+  // }, []);
+
+  const [request, response, promptAsync] = Google.useAuthRequest({
+    clientId: '860231324596-4ps00mvkffvbmujg5529tk3vh8ui0sch.apps.googleusercontent.com',
+  });
+
   useEffect(() => {
-    GoogleSignin.configure({
-      webClientId: '860231324596-4ps00mvkffvbmujg5529tk3vh8ui0sch.apps.googleusercontent.com',
-      offlineAccess: true,
-      scopes: ['profile', 'email'],
-    });
-  }, []);
+    if (response?.type === 'success') {
+      const { authentication } = response;
+      console.log('Authenticated successfully:', authentication);
+    }
+  }, [response]);
 
   // useEffect(() => {
   //   GoogleSignin.configure({
@@ -215,7 +228,7 @@ const AuthScreen = ({ navigation }) => {
                   </Pressable>
                   <Pressable
                     style={[styles.socialButton, styles.googleButton]}
-                    
+                    onPress={() => promptAsync()}
                     >
                     <Image
                       source={require('../../assets/images/Google-50x50.png')}

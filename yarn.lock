@@ -2578,11 +2578,6 @@
   dependencies:
     invariant "^2.2.4"
 
-"@react-native-community/geolocation@^3.4.0":
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/@react-native-community/geolocation/-/geolocation-3.4.0.tgz"
-  integrity sha512-bzZH89/cwmpkPMKKveoC72C4JH0yF4St5Ceg/ZM9pA1SqX9MlRIrIrrOGZ/+yi++xAvFDiYfihtn9TvXWU9/rA==
-
 "@react-native-firebase/app@^20.5.0", "@react-native-firebase/app@20.5.0":
   version "20.5.0"
   resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-20.5.0.tgz"
@@ -2597,11 +2592,6 @@
   integrity sha512-sKiifeVqsKWVAZXfYQJ6JjV8C+kuKJ0Jo82Cfj1L667l0OcwOchX9jTOP9dyt9NUEHOEIJMEzexWdFzL7nxT3g==
   dependencies:
     plist "^3.1.0"
-
-"@react-native-google-signin/google-signin@^13.0.1":
-  version "13.1.0"
-  resolved "https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-13.1.0.tgz"
-  integrity sha512-C2/sqb0/s0c+Dwc/mykASZsRuHxGqn7SFrCxCY9D8p8IOQO05haInhCc7lzraJshRixGva5c/4usQZ71HMYSEQ==
 
 "@react-native-picker/picker@^2.8.0":
   version "2.8.1"
