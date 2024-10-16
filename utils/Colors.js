@@ -1,0 +1,23 @@
+export default {
+    BLACK: '#000',
+    PRIMARY: '#624E88',
+    BTN_COLOR: '#d4d6dd',
+    WHITE: '#fff',
+    LIGHT_GOLD: '#F2E982',
+    DARK_GOLD: '#CBA53C',
+    BACKGROUND: '#f4f4f4',
+    DANGER: '#e74c3c',
+    RED: '#FF0000',
+    GREEN: '#28a745',
+    ORANGE: '#ffa500',
+    BLUE: '#007bff',
+    GRAY: '#6c757d',
+    DARK_GRAY: '#343a40',
+    LIGHT_GRAY: '#d4d6dd',
+    ACTIVE: '#ffffff',
+    INACTIVE: '#bdc3c7',
+    HEADING: '#111',
+    TRANSPARENT: '#FFFFFF00',
+    TRANSPARENT_PICKER: '#80808180',
+    SECONDARY: '#BFACE0'
+};
